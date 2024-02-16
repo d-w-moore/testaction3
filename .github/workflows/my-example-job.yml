@@ -21,5 +21,7 @@ jobs:
 #       run: docker-compose -f docker-compose_run-tests.yml up -d --build
 #     - name: Stop containers
 #       run: docker-compose -f docker-compose_run-tests.yml down
+      - name: Return false result
+        run: false
       - name: Run another script
         run: ./my-other-script.sh "${{ matrix.python }}"
