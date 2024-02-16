@@ -1,3 +1,7 @@
+name: thingie
+
+on: [push, pull_request]
+
 jobs:
   example-job:
     runs-on: ubuntu-latest
