@@ -15,7 +15,11 @@ jobs:
     steps:
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
-      - name: Run a script
-        run: ./my-script.sh "${{ matrix.python }}"
+     #- name: Run a script
+     #  run: ./my-script.sh "${{ matrix.python }}"
+      - name: Start containers
+        run: docker-compose -f docker-compose_run-tests.yml up -d --build
+      - name: Stop containers
+        run: docker-compose -f docker-compose_run-tests.yml down
       - name: Run another script
         run: ./my-other-script.sh
