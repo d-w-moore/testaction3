@@ -1,8 +1,14 @@
 version: '3'
 services:
-  icat:
+  machine1:
     image: ubuntu:18.04
-    command: tail -f /dev/null
+    #command: tail -f /dev/null
     environment:
       - METHOD=md5
       - POSTGRES_PASSWORD=pg_password
+  machine2:
+    build:
+      context: .
+      dockerfile: python.Dockerfile
+      args:
+        - python_version
