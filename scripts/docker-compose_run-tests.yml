@@ -6,6 +6,8 @@ services:
     environment:
       - METHOD=md5
       - POSTGRES_PASSWORD=pg_password
+    volumes:
+      - ${repo_mount_dir}:/repo_dir:ro
   machine2:
     build:
       context: .
